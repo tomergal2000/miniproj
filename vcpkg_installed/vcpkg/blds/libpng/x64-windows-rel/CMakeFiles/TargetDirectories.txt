@@ -1,0 +1,9 @@
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/png_genfiles.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/png_shared.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/pngfix.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/png-fix-itxt.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/edit_cache.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/rebuild_cache.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/list_install_components.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/install.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libpng/x64-windows-rel/CMakeFiles/install/local.dir

@@ -1,0 +1,26 @@
+# ninja log v5
+38	952	7408726773365309	src/CMakeFiles/glfw.dir/context.c.obj	9c86aa7356dc33cf
+81	974	7408726773345722	src/CMakeFiles/glfw.dir/monitor.c.obj	432214c85647a569
+96	994	7408726773471679	src/CMakeFiles/glfw.dir/platform.c.obj	d01cd13d7f5af5ab
+111	1013	7408726773509686	src/CMakeFiles/glfw.dir/vulkan.c.obj	c4465a87d289a8d6
+185	1041	7408726773714515	src/CMakeFiles/glfw.dir/egl_context.c.obj	fa75bdbc2d14f48d
+49	1064	7408726774473123	src/CMakeFiles/glfw.dir/init.c.obj	31d7cc45e065e237
+60	1084	7408726774098279	src/CMakeFiles/glfw.dir/input.c.obj	7ee23fdbf15a352c
+135	1203	7408726775827211	src/CMakeFiles/glfw.dir/window.c.obj	4c4a75821d5489e9
+193	1306	7408726776973745	src/CMakeFiles/glfw.dir/osmesa_context.c.obj	5e1d7d0731efc672
+974	1801	7408726781799972	src/CMakeFiles/glfw.dir/null_monitor.c.obj	478ee56ba87b3adc
+1013	1813	7408726781886200	src/CMakeFiles/glfw.dir/null_joystick.c.obj	ec6bd1101767eb08
+1065	1828	7408726782086950	src/CMakeFiles/glfw.dir/win32_time.c.obj	d8e5b3e82d92d205
+1043	1844	7408726782122051	src/CMakeFiles/glfw.dir/win32_module.c.obj	d691ed1c71388718
+994	1941	7408726783170967	src/CMakeFiles/glfw.dir/null_window.c.obj	c7d7307a9e0efd92
+956	1952	7408726783221322	src/CMakeFiles/glfw.dir/null_init.c.obj	6db0bbee839ebee0
+1085	2010	7408726784015677	src/CMakeFiles/glfw.dir/win32_thread.c.obj	c5acec0d27ece3e8
+1239	2108	7408726784639756	src/CMakeFiles/glfw.dir/win32_init.c.obj	5577615db3a18996
+1306	2147	7408726785430870	src/CMakeFiles/glfw.dir/win32_joystick.c.obj	ca853364e11cc5a
+1844	2148	7408726785470366	src/CMakeFiles/glfw.dir/glfw.rc.res	a339c27c068717ea
+1829	2413	7408726788025341	src/CMakeFiles/glfw.dir/wgl_context.c.obj	6bdb32ba1f6fdbf7
+1802	2429	7408726788224467	src/CMakeFiles/glfw.dir/win32_monitor.c.obj	fbc8d0ec83d88964
+1814	2446	7408726788392316	src/CMakeFiles/glfw.dir/win32_window.c.obj	b77c81fa28908466
+2447	2962	7408726793356288	src/glfw3.dll	fc652839b4ab57f4
+2447	2962	7408726793356288	src/glfw3dll.lib	fc652839b4ab57f4
+2963	3285	0	CMakeFiles/install.util	8c70a48b5a349549

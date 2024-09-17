@@ -1,0 +1,26 @@
+# ninja log v5
+146	893	7408726806272265	src/CMakeFiles/glfw.dir/osmesa_context.c.obj	5985cd36cacf89cb
+75	987	7408726806863984	src/CMakeFiles/glfw.dir/monitor.c.obj	abc0044cfe8b625
+49	1013	7408726807616940	src/CMakeFiles/glfw.dir/init.c.obj	a1933a9d71ed9a3
+104	1041	7408726807399643	src/CMakeFiles/glfw.dir/vulkan.c.obj	95253a2721a9ebe8
+38	1064	7408726807833566	src/CMakeFiles/glfw.dir/context.c.obj	4908fcb9bcbbca3d
+88	1118	7408726808721460	src/CMakeFiles/glfw.dir/platform.c.obj	cc4f756b4b184500
+62	1233	7408726809322540	src/CMakeFiles/glfw.dir/input.c.obj	c7cc038c87630e8a
+114	1249	7408726810075531	src/CMakeFiles/glfw.dir/window.c.obj	c881384c790bb82a
+132	1304	7408726810604496	src/CMakeFiles/glfw.dir/egl_context.c.obj	a4fcfd723a314966
+989	1910	7408726816534669	src/CMakeFiles/glfw.dir/null_monitor.c.obj	6bd267a84520acc7
+1065	1938	7408726816685394	src/CMakeFiles/glfw.dir/win32_module.c.obj	4a17972bba04519e
+1042	1957	7408726816871730	src/CMakeFiles/glfw.dir/null_joystick.c.obj	c416b11382df0d16
+911	1974	7408726817315542	src/CMakeFiles/glfw.dir/null_init.c.obj	a434125cb2a04265
+1014	2032	7408726817382596	src/CMakeFiles/glfw.dir/null_window.c.obj	4e45d4add50180a6
+1233	2110	7408726818546846	src/CMakeFiles/glfw.dir/win32_thread.c.obj	720e12a5bb0923d8
+1119	2121	7408726818546846	src/CMakeFiles/glfw.dir/win32_time.c.obj	82c3b955f45aa883
+1287	2171	7408726819327616	src/CMakeFiles/glfw.dir/win32_init.c.obj	81488bcf014dee21
+1305	2217	7408726819772590	src/CMakeFiles/glfw.dir/win32_joystick.c.obj	c5e660ef70acaf49
+1975	2241	7408726820117200	src/CMakeFiles/glfw.dir/glfw.rc.res	4b91faf558cb69e6
+1911	2567	7408726823317579	src/CMakeFiles/glfw.dir/win32_monitor.c.obj	87e513cd7a392ab1
+1957	2632	7408726824001596	src/CMakeFiles/glfw.dir/wgl_context.c.obj	a23e687bf4e937ff
+1939	2696	7408726824614334	src/CMakeFiles/glfw.dir/win32_window.c.obj	f33d645200c2b099
+2697	3015	7408726827484062	src/glfw3.dll	692ce3854d1471a9
+2697	3015	7408726827484062	src/glfw3dll.lib	692ce3854d1471a9
+3017	3291	0	CMakeFiles/install.util	d11082d817ea24ab

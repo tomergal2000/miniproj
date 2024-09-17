@@ -1,0 +1,10 @@
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/lib/glew32.lib
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/bin/glew32.dll
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/lib/pkgconfig/glew.pc
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/include/GL/wglew.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/include/GL/glew.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/include/GL/glxew.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/lib/cmake/glew/glew-targets.cmake
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/lib/cmake/glew/glew-targets-release.cmake
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/lib/cmake/glew/glew-config.cmake
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/glew_x64-windows/lib/cmake/glew/CopyImportedTargetProperties.cmake

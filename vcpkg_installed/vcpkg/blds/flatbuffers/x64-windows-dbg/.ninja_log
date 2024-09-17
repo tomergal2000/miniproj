@@ -1,0 +1,7 @@
+# ninja log v5
+56	1973	7408751069805970	CMakeFiles/flatbuffers.dir/src/util.cpp.obj	2c5cd790c4c4a8e1
+43	2431	7408751074403023	CMakeFiles/flatbuffers.dir/src/reflection.cpp.obj	bb6e111f9b602698
+32	3427	7408751084409226	CMakeFiles/flatbuffers.dir/src/idl_gen_text.cpp.obj	d4a32d459893e5cf
+21	5515	7408751105133748	CMakeFiles/flatbuffers.dir/src/idl_parser.cpp.obj	819f464a39b5a62e
+5517	5745	7408751107439613	flatbuffers.lib	a4cd36ecb3ae6bc7
+5745	6773	0	CMakeFiles/install.util	6a6a97580f94ccec

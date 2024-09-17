@@ -1,0 +1,16 @@
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/sharpyuv.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webpdecode.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webpdspdecode.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webputilsdecode.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webpdecoder.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webpencode.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webpdsp.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webputils.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webp.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/webpdemux.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/libwebpmux.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/edit_cache.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/rebuild_cache.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/list_install_components.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/install.dir
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/libwebp/x64-windows-rel/CMakeFiles/install/local.dir

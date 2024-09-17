@@ -1,0 +1,9 @@
+# ninja log v5
+74	326	7408731887605008	CMakeFiles/glew_s.dir/C_/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/glew/src/glew-80f5997feb.clean/build/glew.rc.res	3e9f71600d500484
+44	330	7408731887657712	CMakeFiles/glew.dir/C_/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/glew/src/glew-80f5997feb.clean/build/glew.rc.res	a364def1036b4f99
+28	96224	7408732845732580	CMakeFiles/glew.dir/C_/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/glew/src/glew-80f5997feb.clean/src/glew.c.obj	f3e1001f187b76d
+62	96363	7408732847251602	CMakeFiles/glew_s.dir/C_/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/glew/src/glew-80f5997feb.clean/src/glew.c.obj	572d0079a715e8b9
+96401	96529	7408732849589060	lib/libglew32.lib	b127b65494335196
+96226	96564	7408732849788638	bin/glew32.dll	303814ffaa0fdebb
+96226	96564	7408732849788638	lib/glew32.lib	303814ffaa0fdebb
+96565	96880	0	CMakeFiles/install.util	9063865bf0a3dca9

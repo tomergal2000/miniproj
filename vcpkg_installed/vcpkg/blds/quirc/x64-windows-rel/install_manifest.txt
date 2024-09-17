@@ -1,0 +1,4 @@
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/lib/quirc.lib
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/include/quirc.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/share/quirc/quirc-config.cmake
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/quirc_x64-windows/share/quirc/quirc-config-release.cmake

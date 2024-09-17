@@ -1,0 +1,11 @@
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/pkgconfig/libtiff-4.pc
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/tiff.lib
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/bin/tiff.dll
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiff.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiffio.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiffvers.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/include/tiffconf.h
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffTargets.cmake
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffTargets-release.cmake
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffConfigVersion.cmake
+C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/pkgs/tiff_x64-windows/lib/cmake/tiff/TiffConfig.cmake

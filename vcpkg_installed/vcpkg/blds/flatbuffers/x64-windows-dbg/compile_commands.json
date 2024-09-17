@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/flatbuffers/x64-windows-dbg",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe   /TP -DFLATBUFFERS_LOCALE_INDEPENDENT=1 -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\include -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\grpc  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP  /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1  -MDd /W4 /wd4512 /wd4316 /wd4456 /FoCMakeFiles\\flatbuffers.dir\\src\\idl_parser.cpp.obj /FdCMakeFiles\\flatbuffers.dir\\flatbuffers.pdb /FS -c C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\idl_parser.cpp",
+  "file": "C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\idl_parser.cpp",
+  "output": "CMakeFiles\\flatbuffers.dir\\src\\idl_parser.cpp.obj"
+},
+{
+  "directory": "C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/flatbuffers/x64-windows-dbg",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe   /TP -DFLATBUFFERS_LOCALE_INDEPENDENT=1 -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\include -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\grpc  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP  /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1  -MDd /W4 /wd4512 /wd4316 /wd4456 /FoCMakeFiles\\flatbuffers.dir\\src\\idl_gen_text.cpp.obj /FdCMakeFiles\\flatbuffers.dir\\flatbuffers.pdb /FS -c C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\idl_gen_text.cpp",
+  "file": "C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\idl_gen_text.cpp",
+  "output": "CMakeFiles\\flatbuffers.dir\\src\\idl_gen_text.cpp.obj"
+},
+{
+  "directory": "C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/flatbuffers/x64-windows-dbg",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe   /TP -DFLATBUFFERS_LOCALE_INDEPENDENT=1 -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\include -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\grpc  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP  /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1  -MDd /W4 /wd4512 /wd4316 /wd4456 /FoCMakeFiles\\flatbuffers.dir\\src\\reflection.cpp.obj /FdCMakeFiles\\flatbuffers.dir\\flatbuffers.pdb /FS -c C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\reflection.cpp",
+  "file": "C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\reflection.cpp",
+  "output": "CMakeFiles\\flatbuffers.dir\\src\\reflection.cpp.obj"
+},
+{
+  "directory": "C:/Users/tomer/source/repos/miniproj/vcpkg_installed/vcpkg/blds/flatbuffers/x64-windows-dbg",
+  "command": "C:\\PROGRA~2\\MICROS~2\\2022\\BUILDT~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe   /TP -DFLATBUFFERS_LOCALE_INDEPENDENT=1 -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\include -IC:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\grpc  /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP  /D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1  -MDd /W4 /wd4512 /wd4316 /wd4456 /FoCMakeFiles\\flatbuffers.dir\\src\\util.cpp.obj /FdCMakeFiles\\flatbuffers.dir\\flatbuffers.pdb /FS -c C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\util.cpp",
+  "file": "C:\\Users\\tomer\\source\\repos\\miniproj\\vcpkg_installed\\vcpkg\\blds\\flatbuffers\\src\\v23.5.26-35b11ae345.clean\\src\\util.cpp",
+  "output": "CMakeFiles\\flatbuffers.dir\\src\\util.cpp.obj"
+}
+]
