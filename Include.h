@@ -2,6 +2,8 @@
 #ifndef INCLUDE_H
 #define INCLUDE_H
 
+#undef APIENTRY
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -13,7 +15,7 @@
 
 // From pnp:
 std::vector<cv::Point2f> convert2dPointToCV(const std::vector<glm::vec2>& points);
-std::vector<cv::Point3f> ocnvert3dPointToCV(const std::vector<glm::vec3>& points);
+std::vector<cv::Point3f> convert3dPointToCV(const std::vector<glm::vec3>& points);
 std::pair<glm::vec3, glm::vec2> calculateCameraState();
 
 
@@ -25,13 +27,13 @@ void CameraImageLoader(GLFWwindow* window);
 void NextCameraInfoLoader();
 void CameraUpdater();
 void CameraParameterLoader(glm::vec3 calculatedPos, float calcYaw, float calcPitch);
+void drawPointLeft();
 
 // From draw:
-void drawCosahedron();
+void drawTeapot();
 
 enum class State {
     INITIAL,   // Initial state
-    SELECT,    // After pressing '1'
     LOAD       // After pressing '2'
 };
 
@@ -143,15 +145,11 @@ struct MouseClick {
         numLeft++;
         left.emplace_back(xpos, ypos);
     }
-
     /*
 
 
     */
     void addRightClick(const glm::vec3& clickWorldPos) {
-        if (numRight >= numLeft) {
-            return;
-        }
         numRight++;
         right.push_back(clickWorldPos);
     }
@@ -167,8 +165,11 @@ struct Sphere {
 // Declare global variables
 extern std::vector<Sphere> spheres;
 
-// Color definitions
-extern glm::vec3 colors[8];
-
+// Point definitions:
+//extern glm::vec3 colors[8];
+extern std::vector<glm::vec3> pointLocations;
+extern std::vector<glm::vec3> pointColors; 
 
 #endif
+
+void renderPointsInViewport(bool isLeftViewport);

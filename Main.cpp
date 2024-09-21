@@ -13,6 +13,8 @@ void mouseButtonCallback(int button, int state, int x, int y);
 
 GLFWwindow* window;
 std::vector<glm::vec3> points;
+//bool protect = false;
+
 
 
 int main(int argc, char** argv) {
@@ -27,7 +29,7 @@ int main(int argc, char** argv) {
     }
 
     setupScene();
-    // egisters the function renderScene as the callback function that GLUT will call whenever it needs to redraw the window content.
+    // Registers the function renderScene as the callback function that GLUT will call whenever it needs to redraw the window content.
     glutDisplayFunc(sceneRenderer);
 
     //handle on-mouseclick glut
@@ -106,13 +108,14 @@ void mouseButtonCallback(int button, int state, int x, int y) {
             if (x >= WINDOW_WIDTH / 2) {
                 // Translate mouse coordinates to 3D world space
 
-                glm::vec3 threeDPos = pointGetter(x, y);
+                glm::vec3 threeDPos = pointGetter(x, y);// change to fixed points, don't forget to do something about left side
                 mouseInputs.addRightClick(threeDPos);
-
             }
             else {
                 // Save the click for the left side
-                mouseInputs.addLeftClick(x, y);
+                // mouseInputs.addLeftClick(x, y);
+
+                
             }
         }
     }
