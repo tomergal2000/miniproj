@@ -16,7 +16,6 @@
 // From pnp:
 std::vector<cv::Point2f> convert2dPointToCV(const std::vector<glm::vec2>& points);
 std::vector<cv::Point3f> convert3dPointToCV(const std::vector<glm::vec3>& points);
-std::pair<glm::vec3, glm::vec2> calculateCameraState();
 
 
 // From camera:
@@ -27,17 +26,9 @@ void CameraImageLoader(GLFWwindow* window);
 void NextCameraInfoLoader();
 void CameraUpdater();
 void CameraParameterLoader(glm::vec3 calculatedPos, float calcYaw, float calcPitch);
-void drawPointLeft();
 
 // From draw:
 void drawTeapot();
-
-enum class State {
-    INITIAL,   // Initial state
-    LOAD       // After pressing '2'
-};
-
-extern State currState;
 
 void KeyPressProcessor(unsigned char input, int x, int y);
 void KeyReleaseUpdater(unsigned char input, int x, int y);
@@ -47,18 +38,18 @@ void InteractionHandler(unsigned char input, int x, int y);
 std::vector<glm::vec3> pointsGenerator(int k);
 
 // From render:
-void leftPickingViewportRenderer();
-void rightPickingViewportRenderer();
 void leftNormalViewportRenderer();
 void rightNormalViewportRenderer();
-void pickingStateRenderer();
 void normalStateRenderer();
 void sceneRenderer();
 glm::vec3 pointGetter(int x, int y);
 void setupRightViewport();
 void drawPoints(const glm::vec3& threeDPoint, glm::vec3& color);
 
-// From global variables:
+// Global variables:
+// General states:
+extern bool isLookAround;
+
 // Window dimensions
 extern const int WINDOW_WIDTH;
 extern const int WINDOW_HEIGHT;
@@ -119,43 +110,13 @@ extern PressedKey pKey;
 // Saved camera states
 extern std::vector<CameraInformation> savedCmrInfo;
 extern int currCmrInfoIdx;
-extern bool isLoad;
-extern bool isPicking;
-extern bool chooseState;
+
 
 extern std::vector<glm::vec3> cameraRoute;
 
 extern CameraInformation lastInformation;
 extern CameraInformation lastPickingInformation;
 extern CameraInformation cameraPnpSol;
-
-struct MouseClick {
-    // Clicks on the left side of the window(left view)
-    std::vector<glm::vec2> left;
-    // Clicks on the right side of the window(right view)
-    std::vector<glm::vec3> right;
-    int numLeft = 0;
-    int numRight = 0;
-
-    /*
-
-
-    */
-    void addLeftClick(double xpos, double ypos) {
-        numLeft++;
-        left.emplace_back(xpos, ypos);
-    }
-    /*
-
-
-    */
-    void addRightClick(const glm::vec3& clickWorldPos) {
-        numRight++;
-        right.push_back(clickWorldPos);
-    }
-};
-
-extern MouseClick mouseInputs;
 
 struct Sphere {
     glm::vec3 center;

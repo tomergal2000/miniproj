@@ -16,72 +16,6 @@ void normalStateRenderer() {
     rightNormalViewportRenderer();
 }
 
-//void addPointsLeft() {
-//    if (!protect) {
-//        mouseInputs.addLeftClick(244, 325);
-//        mouseInputs.addLeftClick(373, 349);
-//        mouseInputs.addLeftClick(291, 281);
-//        mouseInputs.addLeftClick(221, 276);
-//        mouseInputs.addLeftClick(297, 308);
-//        drawPointLeft();
-//        protect = true;
-//    }
-//}
-
-void drawPointLeft() {
-    leftNormalViewportRenderer();
-
-    // Save the current projection and view matrices
-    glMatrixMode(GL_PROJECTION);
-    glPushMatrix();
-    glLoadIdentity();
-    gluOrtho2D(0, WINDOW_WIDTH / 2, 0, WINDOW_HEIGHT);
-
-    glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-    glLoadIdentity();
-
-    // Disable depth test and enable blending
-    glDisable(GL_DEPTH_TEST);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-    // Draw the saved clicks as colored circles
-    float rad = 7.0f; // Radius of the circles
-    int seg = 36; // Number of segments for the circle
-
-    if (!chooseState) {
-        glDisable(GL_LIGHTING);
-        for (size_t i = 0; i < mouseInputs.left.size(); ++i) {
-
-            glm::vec2 mousePosAtClick = mouseInputs.left[i];
-
-            glm::vec3 color = pointColors[i % 8];
-            glColor3f(color.x, color.y, color.z);
-            // the polygon is a circle
-            glBegin(GL_POLYGON);
-            for (int j = 0; j < seg; ++j) {
-                float theta = 2.0f * 3.1415926f * float(j) / float(seg);
-                // the offsets from the center
-                float dx = rad * cosf(theta);
-                float dy = rad * sinf(theta);
-                // Adjust y-coordinate if needed (OpenGL coordinates might differ)
-                glVertex2f(mousePosAtClick.x + dx, WINDOW_HEIGHT - mousePosAtClick.y + dy);
-            }
-            glEnd();
-
-        }
-        glEnable(GL_LIGHTING);
-    }
-    // Restore the original matrices
-    glMatrixMode(GL_PROJECTION);
-    glPopMatrix();
-    glMatrixMode(GL_MODELVIEW);
-    glPopMatrix();
-
-    // Re-enable depth test if it was previously enabled
-    glEnable(GL_DEPTH_TEST);
-}
 
 void leftNormalViewportRenderer() {
     // Left view (Global view)
@@ -133,118 +67,6 @@ void rightNormalViewportRenderer() {
     renderPointsInViewport(false);
 }
 
-//void pickingStateRenderer() {
-//    leftPickingViewportRenderer();
-//    rightPickingViewportRenderer();
-//}
-
-//void leftPickingViewportRenderer() {
-//
-//    // Ensure we have a saved camera state
-//    if (savedCmrInfo.empty()) {
-//        return;
-//    }
-//
-//    // Retrieve the image from the first saved camera state
-//    if (!currCmrInfoIdx || currCmrInfoIdx < 0)
-//        currCmrInfoIdx = 0;
-//    CameraInformation info = savedCmrInfo[currCmrInfoIdx];
-//    std::vector<unsigned char>& infoImageVec = info.infoImageVec;
-//    if (chooseState) {
-//        infoImageVec = cameraPnpSol.infoImageVec;
-//        // Set viewport to the left half of the window
-//        //glViewport(0, 0, WINDOW_WIDTH / 2, WINDOW_HEIGHT);
-//
-//        // Draw the image
-//        //glDrawPixels(WINDOW_WIDTH / 2, WINDOW_HEIGHT, GL_RGB, GL_UNSIGNED_BYTE, infoImageVec.data());
-//
-//    }
-//    leftNormalViewportRenderer();
-//
-//    // Save the current projection and view matrices
-//    glMatrixMode(GL_PROJECTION);
-//    glPushMatrix();
-//    glLoadIdentity();
-//    gluOrtho2D(0, WINDOW_WIDTH / 2, 0, WINDOW_HEIGHT);
-//
-//    glMatrixMode(GL_MODELVIEW);
-//    glPushMatrix();
-//    glLoadIdentity();
-//
-//    // Disable depth test and enable blending
-//    glDisable(GL_DEPTH_TEST);
-//    glEnable(GL_BLEND);
-//    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-//
-//    // Draw the saved clicks as colored circles
-//    float rad = 7.0f; // Radius of the circles
-//    int seg = 36; // Number of segments for the circle
-//
-//    if (!chooseState) {
-//        glDisable(GL_LIGHTING);
-//        for (size_t i = 0; i < mouseInputs.left.size(); ++i) {
-//
-//            glm::vec2 mousePosAtClick = mouseInputs.left[i];
-//
-//            glm::vec3 color = pointColors[i % 8];
-//            glColor3f(color.x, color.y, color.z);
-//            // the polygon is a circle
-//            glBegin(GL_POLYGON);
-//            for (int j = 0; j < seg; ++j) {
-//                float theta = 2.0f * 3.1415926f * float(j) / float(seg);
-//                // the offsets from the center
-//                float dx = rad * cosf(theta);
-//                float dy = rad * sinf(theta);
-//                // Adjust y-coordinate if needed (OpenGL coordinates might differ)
-//                glVertex2f(mousePosAtClick.x + dx, WINDOW_HEIGHT - mousePosAtClick.y + dy);
-//            }
-//            glEnd();
-//
-//        }
-//        glEnable(GL_LIGHTING);
-//    }
-//    // Restore the original matrices
-//    glMatrixMode(GL_PROJECTION);
-//    glPopMatrix();
-//    glMatrixMode(GL_MODELVIEW);
-//    glPopMatrix();
-//
-//    // Re-enable depth test if it was previously enabled
-//    glEnable(GL_DEPTH_TEST);
-//}
-
-//void rightPickingViewportRenderer() {
-//    setupRightViewport();
-//    if (!chooseState) {
-//        for (size_t i = 0; i < mouseInputs.right.size(); ++i) {
-//            glm::vec3 mousePosAtClick = mouseInputs.right[i];
-//            glm::vec3 color = pointColors[i % 8];
-//            drawPoints(mousePosAtClick, color); // Render the sphere at the clicked point
-//        }
-//    }
-//    // Save current matrix state
-//    glPushMatrix();
-//
-//    // Apply object transformations for normal (same as in renderRightNormalViewport)
-//    glTranslatef(objPos.x, objPos.y, objPos.z);
-//    glRotatef(glm::degrees(objRotX), 1.0f, 0.0f, 0.0f);
-//    glRotatef(glm::degrees(objRotY), 0.0f, 1.0f, 0.0f);
-//
-//    if (chooseState) {
-//        std::vector<unsigned char>& infoImageVec = cameraPnpSol.infoImageVec;
-//        //glViewport(WINDOW_WIDTH / 2, 0, WINDOW_WIDTH / 2, WINDOW_HEIGHT);
-//        glDrawPixels(WINDOW_WIDTH / 2, 0, GL_RGB, GL_UNSIGNED_BYTE, infoImageVec.data());
-//    }
-//    drawTeapot();
-//
-//    // Show points on cosahedron
-//    glDisable(GL_LIGHTING); // Disable lighting for sphere color consistency
-//    glEnable(GL_LIGHTING); // Re-enable lighting after rendering spheres
-//
-//    // Restore previous matrix state
-//    glPopMatrix();
-//}
-
 void setupRightViewport() {
     // Right view (Camera view)
     glViewport(WINDOW_WIDTH / 2, 0, WINDOW_WIDTH / 2, WINDOW_HEIGHT);
@@ -253,12 +75,11 @@ void setupRightViewport() {
     gluPerspective(45.0, (double)(WINDOW_WIDTH / 2) / (double)WINDOW_HEIGHT, 0.1, 100.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    if (chooseState) {
-
+    if (isLookAround) {
         glm::mat4 cView = glm::lookAt(cameraPnpSol.position, cameraPnpSol.position + cameraPnpSol.cFwrd, upVectorPnP);
         glLoadMatrixf(glm::value_ptr(cView));
     }
-    else {
+    else { // Is this really necesarry or just causing problems?
         glm::mat4 cView = glm::lookAt(Position, Position + fwrd, cUp);
         glLoadMatrixf(glm::value_ptr(cView));
     }
@@ -371,14 +192,4 @@ void drawTeapot() {
     glMaterialfv(GL_FRONT, GL_SHININESS, mtrlShininess);
 
     glutSolidTeapot(1.0f);
-
-    //if (!protect) {
-    //    mouseInputs.addLeftClick(244, 325);
-    //    mouseInputs.addLeftClick(373, 349);
-    //    mouseInputs.addLeftClick(291, 281);
-    //    mouseInputs.addLeftClick(221, 276);
-    //    mouseInputs.addLeftClick(297, 308);
-    //    protect = true;
-    //}
-    //glutSolidIcosahedron();
 }

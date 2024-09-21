@@ -1,6 +1,7 @@
 #include "Include.h"
 
-State currState = State::INITIAL;
+bool isLookAround = false; // This simple boolean means: did we finish taking shots and are now toggling between them and solving pnp?
+
 //bool protect = false;
 // Purpose: Renders a view triangle from camera perspective.
 void CameraViewTriangleRenderer(const glm::vec3& position, const glm::vec3& direction, bool cFlag) {
@@ -180,64 +181,49 @@ void CameraParameterLoader(glm::vec3 calculatedPos, float calcYaw, float calcPit
 
  // Purpose: Manages loading and processing of different camera states.
 void StateModeLoader(unsigned char input) {
-    if (tolower(input) == '3') {
-        if (savedCmrInfo.size() == 0) {
+    if (tolower(input) == '3') 
+    {
+        if (savedCmrInfo.size() == 0) 
+        {
             return;
         }
-        isLoad = !isLoad;
-        if (isLoad) {
-            lastInformation.position = Position;
-            lastInformation.cFwrd = fwrd;
-            lastInformation.horizAngle = horiAngle;
-            lastInformation.verticAngle = vertiAngle;
-            NextCameraInfoLoader();
-        }
-        else {
-            Position = lastInformation.position;
-            fwrd = lastInformation.cFwrd;
-            horiAngle = lastInformation.horizAngle;
-            vertiAngle = lastInformation.verticAngle;
-
-            // Recalculate the camera front vector based on the loaded horizontalAngle and verticalAngle
-            glm::vec3 front;
-            front.x = cos(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
-            front.y = sin(glm::radians(vertiAngle));
-            front.z = sin(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
-            fwrd = glm::normalize(front);
-            currState = State::INITIAL; // Exit load state
-        }
+        lastInformation.position = Position;
+        lastInformation.cFwrd = fwrd;
+        lastInformation.horizAngle = horiAngle;
+        lastInformation.verticAngle = vertiAngle;
+        NextCameraInfoLoader();
     }
-}
+    else 
+    {
+        Position = lastInformation.position;
+        fwrd = lastInformation.cFwrd;
+        horiAngle = lastInformation.horizAngle;
+        vertiAngle = lastInformation.verticAngle;
+
+        // Recalculate the camera front vector based on the loaded horizontalAngle and verticalAngle
+        glm::vec3 front;
+        front.x = cos(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
+        front.y = sin(glm::radians(vertiAngle));
+        front.z = sin(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
+        fwrd = glm::normalize(front);
+    }
+ }
 
 void InteractionHandler(unsigned char input, int x, int y) {
-    // Handle state selection
-    if (currState == State::INITIAL) {
-        if (input == '3') {
-            currState = State::LOAD;
-            StateModeLoader(input);
-            return;
-        }
-    }
+	// Handle state selection
+	if (input == '3') {
+		StateModeLoader(input);
+		return;
+	}
 
-    else if (currState == State::LOAD) {
-        printf("4 was pressed\n");
-        StateModeLoader(input);
-        if (!isLoad) {
-            currState = State::INITIAL; // Exit load state
-        }
-        return;
-    }
-    else if (input == '4') {
-        savedCmrInfo.push_back(saveCameraInfo());
-    }
+	else if (input == '4') {
+		savedCmrInfo.push_back(saveCameraInfo());
+	}
 }
 
  // Purpose: Handles key press events, updates camera states and other interactions.
 void KeyPressProcessor(unsigned char input, int x, int y) {
-    if (isLoad || chooseState) {// we send here in order to disable movement
-        InteractionHandler(input, x, y);
-        return;
-    }
+    // Might need to add some protection against movement after shots have been taken and when toggling between them.
     switch (tolower(input)) {
     case '1': case '2': case '3': case '4': InteractionHandler(input, x, y); break;
     case 'w': pKey.w = true; break;
@@ -250,9 +236,6 @@ void KeyPressProcessor(unsigned char input, int x, int y) {
 
 // Purpose: Processes key release events, updating system states.
 void KeyReleaseUpdater(unsigned char input, int x, int y) {
-    if (isLoad || chooseState) {
-        return;
-    }
     switch (tolower(input)) {
     case '1': case '4': case '3': case '2': break;
     case 'w': pKey.w = false; break;
@@ -265,10 +248,7 @@ void KeyReleaseUpdater(unsigned char input, int x, int y) {
 
 // Purpose: Handles special key events for advanced controls.
 void SpecialKeyPressUpdater(int input, int x, int y) {
-    if (chooseState) {
-        return;
-    }
-    if (isLoad) {
+    if (isLookAround) {
         if (input == GLUT_KEY_RIGHT) {
             currCmrInfoIdx++;
             NextCameraInfoLoader();
@@ -293,7 +273,7 @@ void SpecialKeyPressUpdater(int input, int x, int y) {
 
 // Purpose: Handles release of special keys, updating state accordingly.
 void SpecialKeyReleaseUpdater(int input, int x, int y) {
-    if (isLoad || chooseState) {
+    if (isLookAround) {
         return; // Early return to prevent further processing of this key event
     }
     switch (input) {

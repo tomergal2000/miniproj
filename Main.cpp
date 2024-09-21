@@ -6,10 +6,12 @@
 
 
 
+void mouseButtonCallback(int button, int state, int x, int y) {
+    // Do nothing
+}
+
 // Function declarations
 void setupScene();
-
-void mouseButtonCallback(int button, int state, int x, int y);
 
 GLFWwindow* window;
 std::vector<glm::vec3> points;
@@ -94,29 +96,4 @@ void setupScene() {
     glMatrixMode(GL_MODELVIEW);
     // Background color - clear the view
     glClearColor(0.15f, 0.2f, 0.30f, 1.0f);
-}
-
-/*
-
-
- */
-void mouseButtonCallback(int button, int state, int x, int y) {
-    if (isPicking) {
-        if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-
-            // Check if the click is on the right side of the window
-            if (x >= WINDOW_WIDTH / 2) {
-                // Translate mouse coordinates to 3D world space
-
-                glm::vec3 threeDPos = pointGetter(x, y);// change to fixed points, don't forget to do something about left side
-                mouseInputs.addRightClick(threeDPos);
-            }
-            else {
-                // Save the click for the left side
-                // mouseInputs.addLeftClick(x, y);
-
-                
-            }
-        }
-    }
 }

@@ -31,23 +31,14 @@ std::vector<unsigned char> imageInfoVec;
 // Saved camera states
 std::vector<CameraInformation> savedCmrInfo;
 int currCmrInfoIdx = 0;
-bool isLoad = false;
-bool isPicking = false;
-bool chooseState = false;
 
 std::vector<glm::vec3> cameraRoute;
 
 CameraInformation lastInformation;
-CameraInformation lastPickingInformation;
 CameraInformation cameraPnpSol;
 glm::vec3 upVectorPnP;
 
 PressedKey pKey;
-
-// Initialize the vector to store click coordinates
-std::vector<MouseClickCoords> currCoords;
-
-MouseClick mouseInputs;
 
 extern std::vector<glm::vec3> pointLocations = {
     glm::vec3(-0.308449, 0.108678, 0.828841),
