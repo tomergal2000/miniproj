@@ -14,9 +14,7 @@
 #include <iostream>
 
 // From pnp:
-std::vector<cv::Point2f> convert2dPointToCV(const std::vector<glm::vec2>& points);
-std::vector<cv::Point3f> convert3dPointToCV(const std::vector<glm::vec3>& points);
-
+void extractAndSolvePnP();
 
 // From camera:
 void CameraViewTriangleRenderer(const glm::vec3& position, const glm::vec3& direction, bool flag);
@@ -47,6 +45,7 @@ void sceneRenderer();
 glm::vec3 pointGetter(int x, int y);
 void setupRightViewport();
 void drawPoints(const glm::vec3& threeDPoint, glm::vec3& color);
+void cameraOverlayRenderer();
 
 // Global variables:
 // General states:
@@ -104,15 +103,11 @@ struct MouseClickCoords {
     double y;
 };
 
-// Vector to store all click coordinates
-extern std::vector<MouseClickCoords> currCoords;
-
 extern PressedKey pKey;
 
 // Saved camera states
 extern std::vector<CameraInformation> savedCmrInfo;
 extern int currCmrInfoIdx;
-
 
 extern std::vector<glm::vec3> cameraRoute;
 
@@ -128,10 +123,15 @@ struct Sphere {
 // Declare global variables
 extern std::vector<Sphere> spheres;
 
+// For SolvePnP:
 // Point definitions:
-//extern glm::vec3 colors[8];
 extern std::vector<glm::vec3> pointLocations;
 extern std::vector<glm::vec3> pointColors; 
+extern std::vector<std::pair<glm::vec2, glm::vec3>> correspondences; // Stores 2D (x, y) to 3D correspondences
+// A vector to hold the saved camera image before SolvePnP
+extern std::vector<unsigned char> savedCameraImage;
+extern bool isPnPCompleted;
+
 
 #endif
 

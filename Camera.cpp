@@ -1,6 +1,7 @@
 #include "Include.h"
 
 bool isLookAround = false; // This simple boolean means: did we finish taking shots and are now toggling between them and solving pnp?
+bool isPnPCompleted = false;
 
 //bool protect = false;
 // Purpose: Renders a view triangle from camera perspective.
@@ -257,17 +258,25 @@ void InteractionHandler(unsigned char input) {
         break;
 
     case '2':
-        // Switch to the previous saved camera state
+        // Switch to previous state and reset the flag
         loadPreviousCameraInfo();
+        isPnPCompleted = false;
+        isLookAround = false;
         break;
 
     case '3':
-        // Switch to the next saved camera state
+        // Switch to next state and reset the flag
         loadNextCameraInfo();
+        isPnPCompleted = false;
+        isLookAround = false;
         break;
 
     case '4':
-        isLookAround = true;
+        if (isTogglingCameraStates) {
+            isLookAround = true;
+            extractAndSolvePnP();
+            printf("Read pixels\n");
+        }
         break;
 
     default:

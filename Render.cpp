@@ -76,6 +76,9 @@ void rightNormalViewportRenderer() {
 
     // Draw pre-made points in the right viewport
     renderPointsInViewport(false);
+
+    // Won't be rendered if not needed:
+    cameraOverlayRenderer();
 }
 
 void setupRightViewport() {
@@ -184,6 +187,27 @@ void drawPoints(const glm::vec3& point, glm::vec3& color)
     glPopMatrix();
 
     glEnable(GL_LIGHTING);
+}
+
+void cameraOverlayRenderer() {
+    if (isPnPCompleted && !savedCameraImage.empty()) {
+        int width = WINDOW_WIDTH / 2;
+        int height = WINDOW_HEIGHT;
+
+        // Enable blending for transparency
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        // Set transparency for the overlay image
+        glColor4f(1.0f, 1.0f, 1.0f, 0.5f); // Faded effect
+
+        // Render the image on the right viewport
+        glRasterPos2i(0, 0);
+        glDrawPixels(width, height, GL_RGB, GL_UNSIGNED_BYTE, savedCameraImage.data());
+
+        // Disable blending
+        glDisable(GL_BLEND);
+    }
 }
 
 
