@@ -26,6 +26,8 @@ void CameraImageLoader(GLFWwindow* window);
 void NextCameraInfoLoader();
 void CameraUpdater();
 void CameraParameterLoader(glm::vec3 calculatedPos, float calcYaw, float calcPitch);
+extern bool isTogglingCameraStates;
+
 
 // From draw:
 void drawTeapot();
@@ -34,7 +36,7 @@ void KeyPressProcessor(unsigned char input, int x, int y);
 void KeyReleaseUpdater(unsigned char input, int x, int y);
 void SpecialKeyPressUpdater(int input, int x, int y);
 void SpecialKeyReleaseUpdater(int input, int x, int y);
-void InteractionHandler(unsigned char input, int x, int y);
+void InteractionHandler(unsigned char input);
 std::vector<glm::vec3> pointsGenerator(int k);
 
 // From render:

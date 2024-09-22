@@ -37,6 +37,7 @@ std::vector<glm::vec3> cameraRoute;
 CameraInformation lastInformation;
 CameraInformation cameraPnpSol;
 glm::vec3 upVectorPnP;
+bool isTogglingCameraStates = false; // Initialize as false
 
 PressedKey pKey;
 

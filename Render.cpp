@@ -41,6 +41,17 @@ void leftNormalViewportRenderer() {
 
     // Draw camera path
     CameraPathRenderer();
+    
+    for (int i = 0; i < savedCmrInfo.size(); ++i) {
+        bool isCurrent = (i == currCmrInfoIdx); // Check if this is the current camera state
+        CameraInformation info = savedCmrInfo[i];
+
+        // Call the CameraViewTriangleRenderer for each saved camera state
+        CameraViewTriangleRenderer(info.position, info.cFwrd, isCurrent);
+    }
+
+    // Show current position and direction
+    CameraViewTriangleRenderer(Position, fwrd, true);
 }
 
 

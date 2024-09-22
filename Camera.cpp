@@ -9,7 +9,7 @@ void CameraViewTriangleRenderer(const glm::vec3& position, const glm::vec3& dire
     glm::vec3 up = glm::normalize(glm::cross(right, direction)) * 0.75f;
 
     glDisable(GL_LIGHTING);
-    if (cFlag) {
+    if (cFlag && isTogglingCameraStates) {
         glColor3f(1.0f, 0.2f, 0.2f);
     }
     else {
@@ -103,6 +103,7 @@ void NextCameraInfoLoader() {
 
  // Purpose: Updates camera position and orientation based on user input.
 void CameraUpdater() {
+    if (isLookAround) return; // Prevent movement if toggling between saved camera states
     const float cVelocity = 0.01f;
     constexpr float rotSen = glm::radians(0.1f);
     bool isPosUpdated = false;
@@ -209,23 +210,78 @@ void StateModeLoader(unsigned char input) {
     }
  }
 
-void InteractionHandler(unsigned char input, int x, int y) {
-	// Handle state selection
-	if (input == '3') {
-		StateModeLoader(input);
-		return;
-	}
+void loadPreviousCameraInfo() {
+    if (!savedCmrInfo.empty()) {
+        isTogglingCameraStates = true;
+        currCmrInfoIdx = static_cast<int>((currCmrInfoIdx - 1 + savedCmrInfo.size()) % savedCmrInfo.size());
+        CameraInformation information = savedCmrInfo[currCmrInfoIdx];
+        Position = information.position;
+        fwrd = information.cFwrd;
+        horiAngle = information.horizAngle;
+        vertiAngle = information.verticAngle;
 
-	else if (input == '4') {
-		savedCmrInfo.push_back(saveCameraInfo());
-	}
+        // Recalculate the camera front vector
+        glm::vec3 front;
+        front.x = cos(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
+        front.y = sin(glm::radians(vertiAngle));
+        front.z = sin(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
+        fwrd = glm::normalize(front);
+    }
 }
+
+void loadNextCameraInfo() {
+    if (!savedCmrInfo.empty()) {
+        isTogglingCameraStates = true;
+        currCmrInfoIdx = static_cast<int>((currCmrInfoIdx + 1) % savedCmrInfo.size());
+        CameraInformation information = savedCmrInfo[currCmrInfoIdx];
+        Position = information.position;
+        fwrd = information.cFwrd;
+        horiAngle = information.horizAngle;
+        vertiAngle = information.verticAngle;
+
+        // Recalculate the camera front vector
+        glm::vec3 front;
+        front.x = cos(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
+        front.y = sin(glm::radians(vertiAngle));
+        front.z = sin(glm::radians(horiAngle)) * cos(glm::radians(vertiAngle));
+        fwrd = glm::normalize(front);
+    }
+}
+
+
+void InteractionHandler(unsigned char input) {
+    switch (input) {
+    case '1':
+        // Save the current camera state
+        savedCmrInfo.push_back(saveCameraInfo());
+        break;
+
+    case '2':
+        // Switch to the previous saved camera state
+        loadPreviousCameraInfo();
+        break;
+
+    case '3':
+        // Switch to the next saved camera state
+        loadNextCameraInfo();
+        break;
+
+    case '4':
+        isLookAround = true;
+        break;
+
+    default:
+        // Handle any other input (if necessary)
+        break;
+    }
+}
+
 
  // Purpose: Handles key press events, updates camera states and other interactions.
 void KeyPressProcessor(unsigned char input, int x, int y) {
     // Might need to add some protection against movement after shots have been taken and when toggling between them.
     switch (tolower(input)) {
-    case '1': case '2': case '3': case '4': InteractionHandler(input, x, y); break;
+    case '1': case '2': case '3': case '4': InteractionHandler(input); break;
     case 'w': pKey.w = true; break;
     case 'a': pKey.a = true; break;
     case 's': pKey.s = true; break;
