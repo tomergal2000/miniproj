@@ -202,7 +202,7 @@ void cameraOverlayRenderer() {
         glColor4f(1.0f, 1.0f, 1.0f, 0.5f); // Faded effect
 
         // Render the image on the right viewport
-        glRasterPos2i(0, 0);
+        glRasterPos2i(-2, -1);
         glDrawPixels(width, height, GL_RGB, GL_UNSIGNED_BYTE, savedCameraImage.data());
 
         // Disable blending

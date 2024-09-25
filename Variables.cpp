@@ -85,56 +85,94 @@ extern std::vector<glm::vec3> pointLocations = {
     glm::vec3(1.382458, 0.343283, -0.094736),
     glm::vec3(0.110684, -0.100818, -0.949602),
     glm::vec3(-0.496621, -0.554999, -0.764019),
-    glm::vec3(0.360811, -0.603048, -0.795327)
+    glm::vec3(0.360811, -0.603048, -0.795327),
+    //TOP:
+    glm::vec3(-0.479981,0.470951,-0.033954),
+    glm::vec3(0.338919,0.465726,-0.361303),
+    glm::vec3(0.066983,0.761826,0.133725),
+    glm::vec3(-0.157624,0.469672,0.460073),
+    glm::vec3(0.452753,0.456075,0.314161),
+    //BOTTOM:
+    glm::vec3(0.379137, -0.768555, 0.503808),
+    glm::vec3(-0.166595, -0.790777, 0.090339),
+    glm::vec3(0.213184, -0.790062, 0.145157),
+    glm::vec3(-0.372306, -0.780183, 0.354519),
+    glm::vec3(0.221517, -0.786941, -0.3006495),
+    glm::vec3(0.529498, -0.775230, 0.230367),
+    glm::vec3(-0.231264, -0.782391, 0.421961),
+    glm::vec3(-0.536819, -0.776760, -0.190449),
+    glm::vec3(-0.051200, -0.736386, -0.740976)
 };
 
 extern std::vector<glm::vec3> pointColors = {
-    glm::vec3(1.0f, 0.0f, 0.0f),   // Red
-    glm::vec3(0.0f, 1.0f, 0.0f),   // Green
-    glm::vec3(0.0f, 0.0f, 1.0f),   // Blue
-    glm::vec3(1.0f, 1.0f, 0.0f),   // Yellow
-    glm::vec3(1.0f, 0.0f, 1.0f),   // Magenta
-    glm::vec3(0.0f, 1.0f, 1.0f),   // Cyan
-    glm::vec3(0.5f, 0.5f, 0.5f),   // Gray
-    glm::vec3(0.5f, 0.0f, 0.0f),   // Dark Red
-    glm::vec3(0.0f, 0.5f, 0.0f),   // Dark Green
-    glm::vec3(0.0f, 0.0f, 0.5f),   // Dark Blue
-    glm::vec3(0.5f, 0.5f, 0.0f),   // Olive
-    glm::vec3(0.5f, 0.0f, 0.5f),   // Purple
-    glm::vec3(0.8f, 0.4f, 0.2f),   // Orange
-    glm::vec3(0.2f, 0.8f, 0.6f),   // Turquoise
-    glm::vec3(0.7f, 0.3f, 0.5f),   // Pink
-    glm::vec3(0.9f, 0.9f, 0.9f),   // Light Gray
-    glm::vec3(0.9f, 0.6f, 0.2f),   // Golden
-    glm::vec3(0.2f, 0.2f, 0.8f),   // Navy Blue
-    glm::vec3(0.6f, 0.2f, 0.8f),   // Violet
-    glm::vec3(0.8f, 0.2f, 0.4f),   // Salmon
-    glm::vec3(0.4f, 0.8f, 0.2f),   // Lime Green
-    glm::vec3(0.4f, 0.2f, 0.8f),   // Indigo
-    glm::vec3(0.6f, 0.3f, 0.1f),   // Brown
-    glm::vec3(0.8f, 0.1f, 0.6f),   // Hot Pink
-    glm::vec3(0.7f, 0.4f, 0.2f),   // Copper
-    glm::vec3(0.6f, 0.8f, 0.2f),   // Lemon
-    glm::vec3(0.9f, 0.7f, 0.1f),   // Light Gold
-    glm::vec3(0.1f, 0.7f, 0.5f),   // Sea Green
-    glm::vec3(0.9f, 0.2f, 0.4f),   // Ruby Red
-    glm::vec3(0.6f, 0.5f, 0.9f),   // Lilac
-    glm::vec3(0.3f, 0.9f, 0.4f),   // Mint
-    glm::vec3(0.9f, 0.4f, 0.7f),   // Rose
-    glm::vec3(0.4f, 0.7f, 0.9f),   // Sky Blue
-    glm::vec3(0.8f, 0.3f, 0.5f),   // Deep Pink
-    glm::vec3(0.5f, 0.6f, 0.7f),   // Slate Gray
-    glm::vec3(0.9f, 0.3f, 0.3f),   // Cherry Red
-    glm::vec3(0.5f, 0.3f, 0.7f),   // Orchid
-    glm::vec3(0.3f, 0.5f, 0.9f),   // Ice Blue
-    glm::vec3(0.7f, 0.9f, 0.2f),   // Lemon Lime
-    glm::vec3(0.8f, 0.4f, 0.6f),   // Lavender
-    glm::vec3(0.9f, 0.7f, 0.3f),   // Goldenrod
-    glm::vec3(0.2f, 0.9f, 0.5f),    // Bright Green
-    glm::vec3(0.28f, 0.7f, 0.5f),   // don't know, don't care
-    glm::vec3(0.12f, 0.35f, 0.1f)  // don't know, don't care
+glm::vec3(1.0f, 0.0f, 0.0f),   // Red
+glm::vec3(0.0f, 1.0f, 0.0f),   // Green
+glm::vec3(0.0f, 0.0f, 1.0f),   // Blue
+glm::vec3(1.0f, 1.0f, 0.0f),   // Yellow
+glm::vec3(1.0f, 0.0f, 1.0f),   // Magenta
+glm::vec3(0.0f, 1.0f, 1.0f),   // Cyan
+glm::vec3(0.5f, 0.5f, 0.5f),   // Gray
+glm::vec3(0.6f, 0.0f, 0.0f),   // Dark Red
+glm::vec3(0.0f, 0.6f, 0.0f),   // Dark Green
+glm::vec3(0.0f, 0.0f, 0.6f),   // Dark Blue
+glm::vec3(0.7f, 0.7f, 0.0f),   // Olive
+glm::vec3(0.7f, 0.0f, 0.7f),   // Purple
+glm::vec3(1.0f, 0.5f, 0.2f),   // Bright Orange
+glm::vec3(0.3f, 1.0f, 0.7f),   // Turquoise
+glm::vec3(1.0f, 0.4f, 0.7f),   // Pink
+glm::vec3(0.9f, 0.9f, 0.9f),   // Light Gray
+glm::vec3(1.0f, 0.8f, 0.4f),   // Gold
+glm::vec3(0.2f, 0.2f, 1.0f),   // Royal Blue
+glm::vec3(0.8f, 0.3f, 1.0f),   // Lavender
+glm::vec3(1.0f, 0.6f, 0.6f),   // Light Coral
+glm::vec3(0.5f, 1.0f, 0.4f),   // Light Green
+glm::vec3(0.6f, 0.4f, 1.0f),   // Indigo
+glm::vec3(0.7f, 0.4f, 0.2f),   // Brown
+glm::vec3(1.0f, 0.2f, 0.7f),   // Hot Pink
+glm::vec3(0.9f, 0.7f, 0.4f),   // Bronze
+glm::vec3(0.8f, 1.0f, 0.2f),   // Lemon
+glm::vec3(1.0f, 0.9f, 0.2f),   // Bright Yellow
+glm::vec3(0.2f, 0.9f, 0.6f),   // Aqua
+glm::vec3(1.0f, 0.2f, 0.4f),   // Ruby Red
+glm::vec3(0.8f, 0.7f, 1.0f),   // Soft Lilac
+glm::vec3(0.5f, 1.0f, 0.6f),   // Mint Green
+glm::vec3(1.0f, 0.5f, 0.9f),   // Rose Pink
+glm::vec3(0.4f, 0.7f, 1.0f),   // Sky Blue
+glm::vec3(1.0f, 0.3f, 0.6f),   // Deep Pink
+glm::vec3(0.7f, 0.8f, 0.9f),   // Soft Blue Gray
+glm::vec3(1.0f, 0.4f, 0.4f),   // Cherry Red
+glm::vec3(0.6f, 0.4f, 0.9f),   // Orchid Purple
+glm::vec3(0.4f, 0.6f, 1.0f),   // Ice Blue
+glm::vec3(0.7f, 1.0f, 0.3f),   // Lime
+glm::vec3(0.9f, 0.5f, 0.7f),   // Light Violet
+glm::vec3(1.0f, 0.9f, 0.5f),   // Sand Yellow
+glm::vec3(0.3f, 1.0f, 0.5f),   // Bright Mint
+glm::vec3(1.0f, 0.7f, 0.2f),   // Goldenrod
+glm::vec3(0.7f, 1.0f, 0.7f),   // Bright Green
+glm::vec3(1.0f, 0.4f, 0.8f),   // Mauve
+glm::vec3(0.6f, 0.8f, 1.0f),   // Steel Blue
+glm::vec3(1.0f, 0.5f, 0.3f),   // Burnt Orange
+glm::vec3(0.3f, 1.0f, 0.9f),   // Light Aquamarine
+glm::vec3(0.9f, 0.3f, 0.2f),   // Dark Coral
+glm::vec3(0.4f, 1.0f, 0.4f),   // Bright Lime
+glm::vec3(1.0f, 0.7f, 0.8f),   // Pale Pink
+glm::vec3(0.6f, 0.9f, 1.0f),   // Light Blue
+glm::vec3(1.0f, 0.9f, 0.4f),   // Light Gold
+glm::vec3(0.7f, 0.6f, 0.3f),   //
+glm::vec3(0.93f, 0.57f, 0.13f),  // Pumpkin Orange
+glm::vec3(0.45f, 0.76f, 0.27f),  // Forest Green
+glm::vec3(0.15f, 0.65f, 0.90f),  // Azure Blue
+glm::vec3(0.88f, 0.09f, 0.42f),  // Crimson
+glm::vec3(0.91f, 0.85f, 0.30f),  // Golden Yellow
+glm::vec3(0.24f, 0.45f, 0.96f),  // Royal Blue
+glm::vec3(0.78f, 0.28f, 0.25f),  // Brick Red
+glm::vec3(0.35f, 0.18f, 0.70f),  // Deep Purple
+glm::vec3(0.65f, 0.85f, 0.23f),  // Chartreuse
+glm::vec3(0.98f, 0.66f, 0.12f),  // Amber
+glm::vec3(0.72f, 0.50f, 0.19f),  // Mustard
+glm::vec3(0.18f, 0.50f, 0.58f),  // Teal
+glm::vec3(0.95f, 0.18f, 0.10f),  // Bright Red
 };
-
 
 //glm::vec3 colors[8] = {
 //    glm::vec3(1.0f, 0.5f, 0.8f), // Pink

@@ -111,7 +111,48 @@ bool runSolvePnP(const std::vector<cv::Point3f>& objectPoints, const std::vector
 }
 
 void handlePnPResults(const cv::Mat& rvec, const cv::Mat& tvec) {
-    // Existing code for processing rotation and translation vectors
+    // Calculate rotation matrix using Rodrigues
+    cv::Mat R;
+    cv::Rodrigues(rvec, R);
+
+    // Adjust rotation matrix to align with OpenGL's coordinate system
+    cv::Mat adjustY = (cv::Mat_<double>(3, 3) <<
+        1, 0, 0,
+        0, -1, 0,
+        0, 0, 1);
+    R = adjustY * R;
+
+    // Convert rotation matrix to glm::mat3
+    glm::mat3 rotationMatrix(
+        R.at<double>(0, 0), R.at<double>(0, 1), R.at<double>(0, 2),
+        R.at<double>(1, 0), R.at<double>(1, 1), R.at<double>(1, 2),
+        R.at<double>(2, 0), R.at<double>(2, 1), R.at<double>(2, 2)
+    );
+
+    // Translation vector
+    glm::vec3 translation(
+        tvec.at<double>(0),
+        tvec.at<double>(1),
+        tvec.at<double>(2)
+    );
+
+    // Calculate the camera position in world space
+    glm::vec3 cameraPosition = -glm::transpose(rotationMatrix) * translation;
+    cameraPosition.y;
+
+    // Calculate yaw and pitch based on the rotation matrix
+    glm::vec3 front;
+    front.x = rotationMatrix[2][0];
+    front.y = rotationMatrix[2][1];
+    front.z = rotationMatrix[2][2];
+    front = glm::normalize(front);
+
+    // Calculate yaw (horizontal angle) and pitch (vertical angle)
+    float yaw = glm::degrees(atan2(front.z, front.x)) + 180.0f;  // Flip yaw by 180 degrees
+    float pitch = -glm::degrees(asin(front.y));
+
+    // Update the camera position, yaw, and pitch
+    CameraParameterLoader(cameraPosition, yaw, pitch);
 
     // Capture the right viewport (camera view) after solvePnP
     int width = WINDOW_WIDTH / 2;
@@ -119,7 +160,7 @@ void handlePnPResults(const cv::Mat& rvec, const cv::Mat& tvec) {
     std::vector<unsigned char> capturedImage(static_cast<size_t>(3) * static_cast<size_t>(width) * static_cast<size_t>(height));
     glReadPixels(width, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, capturedImage.data());
 
-    // Save the image and use it for overlay
+    // Save the image for overlay
     savedCameraImage = std::move(capturedImage);
 
     // Set flag to true indicating solvePnP is done
@@ -140,6 +181,8 @@ void extractAndSolvePnP() {
     // Step 3: Run solvePnP
     cv::Mat rvec, tvec;
     bool success = runSolvePnP(objectPoints, imagePoints, rvec, tvec);
+
+
 
     // Step 4: Handle the results
     if (success) {
